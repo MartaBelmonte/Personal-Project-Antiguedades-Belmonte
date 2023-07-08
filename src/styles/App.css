@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*contenedor principal  */
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/*HEADER*/
+/*encabezado */
+.header {
+    background-color: #b4b1b1;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/*botón del menú */
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    z-index: 2;
+}
+
+/*icono del menú */
+.menu-icon {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+/*menú desplegado */
+.nav {
+    display: none;
+}
+
+/*menú desplegado en estado abierto */
+.nav.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/*enlaces del menú desplegado */
+.nav.open a {
+    margin: 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+/* Estilos generales de la imagen */
+.image {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+/*MAIN*/
+/*contenido principal */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/*cada sección del contenido principal */
+.main-section {
+    margin-bottom: 40px;
+}
+
+/*formulario */
+.form {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*FOOTER*/
+/*pie de página */
+.footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
