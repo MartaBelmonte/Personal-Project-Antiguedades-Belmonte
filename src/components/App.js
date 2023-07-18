@@ -2,43 +2,15 @@ import React, { useState, useEffect } from 'react';
 import menuIconImage from '../images/ico-menu.png';
 import fotoXevi from '../images/foto-xevi.jpeg';
 import fotoPortada from '../images/mueble-portada.jpeg';
+import MyCalendar from '../components/calendar/Calendar';
 import '../styles/App.css';
 
-import FullCalendar from '@fullcalendar/react'; // Importa FullCalendar
-import dayGridPlugin from '@fullcalendar/daygrid'; // Importa el plugin dayGrid
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
-  useEffect(() => {
-    let calendarEl = document.getElementById('calendar'); // Corrige el ID del contenedor del calendario
-
-    let calendar = new FullCalendar.Calendar(calendarEl, {
-      // Configuración del calendario
-      plugins: [dayGridPlugin], // Utiliza el plugin dayGrid
-      defaultView: 'dayGridMonth',
-
-      // Eventos del calendario
-      events: [
-        {
-          title: 'Evento 1',
-          start: '2023-07-10',
-          end: '2023-07-12',
-        },
-        {
-          title: 'Evento 2',
-          start: '2023-07-15',
-          end: '2023-07-17',
-        },
-      ],
-    });
-
-    calendar.render();
-  }, []); 
-
 
 
   return (
@@ -94,7 +66,7 @@ function App() {
         </section>
         <section className="main-section">
           <h2>Próximos eventos</h2>
-          <div id="calendar"></div>
+          <MyCalendar/>
         </section>
       </main>
 
