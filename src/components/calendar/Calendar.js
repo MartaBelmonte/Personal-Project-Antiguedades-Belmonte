@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import esLocale from '@fullcalendar/daygrid/locales/es';
 import interactionPlugin from '@fullcalendar/interaction';
 import { v4 as uuid } from 'uuid';
 
@@ -25,6 +26,9 @@ const MyCalendar = () => {
   // Obtén la fecha actual
   const currentDate = new Date();
 
+   // Configura el idioma español para el calendario
+  const calendarLocale = esLocale;
+
   // Función para obtener el título personalizado del encabezado
   const getHeaderTitle = (date) => {
     const options = { year: 'numeric', month: 'long' };
@@ -37,6 +41,7 @@ const MyCalendar = () => {
         editable
         selectable
         events={events}
+        locale={calendarLocale}
         select={handleSelect}
         initialDate={currentDate} // Establece la fecha inicial como la fecha actual
         headerToolbar={{
