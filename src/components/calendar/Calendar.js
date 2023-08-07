@@ -25,6 +25,12 @@ const MyCalendar = () => {
   // Obtén la fecha actual
   const currentDate = new Date();
 
+  // Función para obtener el título personalizado del encabezado
+  const getHeaderTitle = (date) => {
+    const options = { year: 'numeric', month: 'long' };
+    return date.toLocaleDateString('es-ES', options);
+  };
+
   return (
     <div className='calendar'>
       <FullCalendar
@@ -34,7 +40,8 @@ const MyCalendar = () => {
         select={handleSelect}
         initialDate={currentDate} // Establece la fecha inicial como la fecha actual
         headerToolbar={{
-          start: 'today prev next',
+          start: 'today prev,next', // Muestra las flechas para cambiar de mes
+          center: 'title', // Usa la función personalizada para mostrar el título del mes actual
           end: 'dayGridMonth dayGridWeek dayGridDay',
         }}
         plugins={[dayGridPlugin, interactionPlugin]}
@@ -49,3 +56,5 @@ const MyCalendar = () => {
 };
 
 export default MyCalendar;
+
+
