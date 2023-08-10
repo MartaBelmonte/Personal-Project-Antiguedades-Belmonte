@@ -101,7 +101,40 @@
     gap: 20px;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    margin: auto;
+    background-color: #0a7efb;
+    color: white;
+    padding: 8px 15px;
+    width: 150px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.form label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
 
 /*FOOTER*/
 /*pie de página */

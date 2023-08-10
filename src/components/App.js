@@ -41,11 +41,18 @@ function App() {
         <section className="main-section">
           <h2>Quiénes somos</h2>
           <img className="image" src={fotoXevi} alt="Foto Xevi" />
-          <article>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</article>
+          <article>
+          ¡Bienvenidos a nuestro mundo de maravillas únicas!
+          <p>Explora nuestra tienda en línea, donde podrás descubrir una amplia variedad de productos exquisitos a precios para todos los bolsillos. Nuestra colección abarca desde piezas con historia hasta elementos que resplandecen con un toque contemporáneo.</p>
+          <p>Mantente informado sobre nuestros próximos eventos, donde celebramos la artesanía y el diseño en todas sus formas. Charlas, exposiciones y más te esperan para sumergirte en la magia de cada época.</p>
+          <p>¿Tienes preguntas? No dudes en contactarnos a través de nuestra página de contacto o seguirnos en redes sociales. Estamos aquí para ti, compartiendo la pasión por lo auténtico y lo hermoso.</p>
+          ¡Bienvenidos a un mundo de elegancia y encanto!
+          </article>
         </section>
+
         <section className="main-section">
-          <h2>Contacta</h2>
           <form className="form">
+            <h2>Contacta</h2>
             <label>
               Tu nombre completo:
               <input type="text" name="nombre" />
@@ -61,7 +68,7 @@ function App() {
               <textarea name="mensaje"></textarea>
             </label>
             <br />
-            <button type="submit">Enviar</button>
+            <button class="submit-button" type="submit">Enviar</button>
           </form>
         </section>
         <section className="main-section">
