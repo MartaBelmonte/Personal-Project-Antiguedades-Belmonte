@@ -11,7 +11,10 @@ function App() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
+  //cerrar el menú cuando se hace clic en un enlace del menú
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className="app">
@@ -21,10 +24,10 @@ function App() {
           <img className={`menu-icon ${isMenuOpen ? 'open' : ''}`} src={menuIconImage} alt="hamburguer"></img>
         </button>
         <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
-          <a href="#">Productos</a>
-          <a href="#">Quiénes somos</a>
-          <a href="#">Contacta</a>
-          <a href="#">Dónde encontrarnos</a>
+          <a href="#productos" onClick={closeMenu}>Productos</a>
+          <a href="#quienes-somos" onClick={closeMenu}>Quiénes somos</a>
+          <a href="#contacta" onClick={closeMenu}>Contacta</a>
+          <a href="#proximos-eventos" onClick={closeMenu}>Próximos eventos</a>
         </nav>
       </header>
 
@@ -32,25 +35,27 @@ function App() {
         <section className="main-section">
           <img className="image" src={fotoPortada} alt="Foto portada" />
         </section>
-        <section className="main-section">
+        <section id="productos" className="main-section">
           <h2>Productos</h2>
           <ul>
             <li>Foto productos</li>
           </ul>
         </section>
-        <section className="main-section">
+        <section id="quienes-somos" className="main-section quienes-somos">
+          <div className="imagen-quienes-somos">
+            <img src={fotoXevi} alt="Foto Xevi" />
+          </div>
+          <div className="texto-quienes-somos">
           <h2>Quiénes somos</h2>
-          <img className="image" src={fotoXevi} alt="Foto Xevi" />
-          <article>
-          ¡Bienvenidos a nuestro mundo de maravillas únicas!
-          <p>Explora nuestra tienda en línea, donde podrás descubrir una amplia variedad de productos exquisitos a precios para todos los bolsillos. Nuestra colección abarca desde piezas con historia hasta elementos que resplandecen con un toque contemporáneo.</p>
-          <p>Mantente informado sobre nuestros próximos eventos, donde celebramos la artesanía y el diseño en todas sus formas. Charlas, exposiciones y más te esperan para sumergirte en la magia de cada época.</p>
-          <p>¿Tienes preguntas? No dudes en contactarnos a través de nuestra página de contacto o seguirnos en redes sociales. Estamos aquí para ti, compartiendo la pasión por lo auténtico y lo hermoso.</p>
-          ¡Bienvenidos a un mundo de elegancia y encanto!
+          <article className='quienes-somos'>
+          <p>¡Bienvenidos a nuestro mundo de maravillas únicas! Explora nuestra tienda en línea, donde podrás descubrir una amplia variedad de productos exquisitos a precios para todos los bolsillos. Nuestra colección abarca desde piezas con historia hasta elementos que resplandecen con un toque contemporáneo. Mantente informado sobre nuestros próximos eventos, donde celebramos la artesanía y el diseño en todas sus formas. Charlas, exposiciones y más te esperan para sumergirte en la magia de cada época.
+          ¿Tienes preguntas? No dudes en contactarnos a través de nuestra página de contacto o seguirnos en redes sociales. Estamos aquí para ti, compartiendo la pasión por lo auténtico y lo hermoso.
+          ¡Bienvenidos a un mundo de elegancia y encanto!</p>
           </article>
-        </section>
+        </div>
+      </section>
 
-        <section className="main-section">
+        <section id="contacta" className="main-section">
           <form className="form">
             <h2>Contacta</h2>
             <label>
@@ -71,7 +76,7 @@ function App() {
             <button class="submit-button" type="submit">Enviar</button>
           </form>
         </section>
-        <section className="main-section">
+        <section id="proximos-eventos" className="main-section">
           <h2>Próximos eventos</h2>
           <MyCalendar/>
         </section>

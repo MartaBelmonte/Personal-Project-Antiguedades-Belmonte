@@ -95,6 +95,23 @@
     margin-bottom: 40px;
 }
 
+/* sección Quiénes somos */
+.quienes-somos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* imagen en Quiénes somos */
+.imagen-quienes-somos img {
+    max-width: 500px;
+}
+
+/* Texto en Quiénes somos */
+.texto-quienes-somos {
+    max-width: 400px;
+}
+
 /*formulario */
 .form {
     display: grid;
@@ -135,6 +152,34 @@
     font-weight: bold;
 }
 
+/* Establece un ancho máximo para el contenedor del calendario */
+.calendar {
+    max-width: 100%;
+}
+
+/* Estilo para el título del calendario */
+.fc-toolbar-title {
+    color: #0a57a9;
+}
+
+/* Estilo para los eventos del calendario */
+.fc-event {
+    background-color: #f2f977;
+    color: #020101;
+}
+
+/* Ajusta el tamaño de los días */
+.fc-day {
+    width: 14.2857%;
+    /* Divide el calendario en 7 columnas para los días de la semana */
+
+}
+
+/* Ajusta el tamaño del número del día */
+.fc-day-number {
+    font-size: 18px;
+    /* Ajusta el tamaño del número del día según tus preferencias */
+}
 
 /*FOOTER*/
 /*pie de página */

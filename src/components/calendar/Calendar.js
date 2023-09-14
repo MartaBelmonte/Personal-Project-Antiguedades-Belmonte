@@ -2,25 +2,18 @@ import React, { useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
-import { v4 as uuid } from 'uuid';
+import esLocale from '@fullcalendar/core/locales/es';
 
 const MyCalendar = () => {
-  const [events, setEvents] = useState([]);
-  const handleSelect = (info) => {
-    const { start, end } = info;
-    const eventName = "Feria de Málaga";
-    const eventStart = new Date("2023-10-08T08:00:00");
-    const eventEnd = new Date("2023-10-08T20:00:00");
-
-    const newEvent = {
-      start: eventStart,
-      end: eventEnd,
-      title: eventName,
-      id: uuid(),
-    };
-
-    setEvents([...events, newEvent]);
-  };
+  const [events] = useState([
+    {
+      title: 'Cumpleaños de Marta',
+      start: '2023-11-05',
+      backgroundColor: 'yellow',
+      textColor: 'black', // Establece el color de fondo en amarillo
+    },
+    // Otros eventos...
+  ]);
 
   // Obtén la fecha actual
   const currentDate = new Date();
@@ -34,27 +27,27 @@ const MyCalendar = () => {
   return (
     <div className='calendar'>
       <FullCalendar
-        editable
-        selectable
         events={events}
-        select={handleSelect}
-        initialDate={currentDate} // Establece la fecha inicial como la fecha actual
+        initialDate={currentDate}
         headerToolbar={{
-          start: 'today prev,next', // Muestra las flechas para cambiar de mes
-          center: 'title', // Usa la función personalizada para mostrar el título del mes actual
+          start: 'today prev,next',
+          center: 'title',
           end: 'dayGridMonth dayGridWeek dayGridDay',
         }}
         plugins={[dayGridPlugin, interactionPlugin]}
         views={{
           dayGridMonth: {
-            titleFormat: { year: 'numeric', month: 'long' } // Muestra el nombre completo del mes
-          }
+            titleFormat: { year: 'numeric', month: 'long' },
+            dayMaxEventRows: 2, // Ajusta este valor para controlar el tamaño de los recuadros de los días
+          },
         }}
+        locale={esLocale}
       />
     </div>
   );
 };
 
 export default MyCalendar;
+
 
 
