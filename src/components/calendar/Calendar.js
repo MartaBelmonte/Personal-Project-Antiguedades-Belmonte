@@ -25,6 +25,8 @@ const MyCalendar = () => {
   };
 
   return (
+    <section id="proximos-eventos" className="main-section">
+      <h2>Próximos eventos</h2>
     <div className='calendar'>
       <FullCalendar
         events={events}
@@ -44,6 +46,7 @@ const MyCalendar = () => {
         locale={esLocale}
       />
     </div>
+    </section>
   );
 };
 
