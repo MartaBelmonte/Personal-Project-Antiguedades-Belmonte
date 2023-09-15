@@ -14,7 +14,7 @@ const Menu= () => {
 
     return (
         <header className="header">
-        <h1>Antiguedades Belmonte</h1>
+          <h1 className='title'>Antigüedades Belmonte</h1>
         <button className="menu-button" onClick={toggleMenu}>
           <img className={`menu-icon ${isMenuOpen ? 'open' : ''}`} src={menuIconImage} alt="hamburguer"></img>
         </button>
