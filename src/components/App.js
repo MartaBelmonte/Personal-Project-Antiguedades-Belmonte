@@ -22,13 +22,13 @@ function App() {
           <MyCalendar/>
       </main>
       <footer className="footer">
-        <div className="footer-links">
-          <p>info@blablabla.com</p>
-          <p>Manresa, Barcelona</p>
-          <a href="#">Instagram</a>
-          <a href="#">Todo Colección</a>
-        </div>
-      </footer>
+      <div className="footer-links">
+        <a href="#productos">Productos</a>
+        <a href="#quienes-somos">Quiénes somos</a>
+        <a href="#contacta">Contacta</a>
+        <a href="#proximos-eventos">Próximos eventos</a>
+      </div>
+    </footer>
     </div>
   );
 }

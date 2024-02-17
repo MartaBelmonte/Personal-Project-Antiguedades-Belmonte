@@ -7,9 +7,11 @@
 
 /*contenedor principal  */
 .app {
+    width: 100%;
     display: flex;
     background-color: #ffffff;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 
@@ -17,8 +19,6 @@
 /*encabezado */
 .header {
     background-color: #f9f1f1;
-    background-size: contain;
-    background-repeat: no-repeat;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -27,7 +27,6 @@
     justify-content: space-between;
     min-height: 100px;
     padding: 10px 20px;
-    /* Reduzco el padding superior e inferior */
     color: #0a57a9;
 }
 
@@ -41,27 +40,19 @@
     background: none;
     border: none;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    z-index: 2;
-    margin-left: 10px;
-    /* Ajusto el margen izquierdo del botón del menú */
-    /* ... restante de los estilos ... */
+    display: none;
+    /* Ocultar el botón de hamburguesa en pantallas grandes */
 }
 
-/*icono del menú */
 .menu-icon {
     width: 30px;
-    /* Reduzco el tamaño del icono del menú */
     height: 30px;
-    position: relative;
     cursor: pointer;
 }
 
-/*menú desplegado */
 .nav {
-    display: none;
+    display: flex;
+    align-items: center;
 }
 
 /*menú desplegado en estado abierto */
@@ -73,14 +64,29 @@
     top: 100%;
     right: 0;
     width: 100%;
-    /* Hago que el menú ocupe el 100% del ancho */
     background-color: #dee5f7;
-    /* ... restante de los estilos ... */
 }
 
-/*enlaces del menú desplegado */
+.nav a {
+    margin: 0 15px;
+    color: #0a57a9;
+    text-decoration: none;
+    border: 1px solid transparent;
+    /* Borde inicial transparente */
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    /* Transición suave para el cambio de color del borde */
+}
+
+.nav a:hover {
+    border-color: #0a57a9;
+    /* Cambiar el color del borde al pasar el ratón */
+}
+
 .nav.open a {
-    margin: 5px;
+    margin: 15px 0;
+    /* Espacio entre los enlaces */
     color: #000;
     text-decoration: none;
 }
@@ -100,12 +106,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-}
-
-/*cada sección del contenido principal */
-.main-section {
-    margin-bottom: 50px;
+    margin: 20px;
 }
 
 /*sección productos*/
@@ -135,7 +136,7 @@
 
 /* imagen en Quiénes somos */
 .imagen-quienes-somos img {
-    max-width: 500px;
+    max-width: 100%;
 }
 
 .texto-quienes-somos article p {
@@ -192,23 +193,18 @@
     color: #0a57a9;
 }
 
-/* Estilo para los eventos del calendario */
+.fc .fc-toolbar-title {
+    font-size: 1.55em;
+    margin: 0 20px;
+}
+
+.fc .fc-button-primary {
+    font-size: 15px;
+}
+
 .fc-event {
     background-color: #f2f977;
     color: #020101;
-}
-
-/* Ajusta el tamaño de los días */
-.fc-day {
-    width: 14.2857%;
-    /* Divide el calendario en 7 columnas para los días de la semana */
-
-}
-
-/* Ajusta el tamaño del número del día */
-.fc-day-number {
-    font-size: 18px;
-    /* Ajusta el tamaño del número del día según tus preferencias */
 }
 
 /*FOOTER*/
@@ -234,6 +230,19 @@
     /* Eliminar el margen de los párrafos y enlaces */
 }
 
+.footer-links a {
+    margin: 0;
+    color: #0a57a9;
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.footer-links a:hover {
+    border-color: #0a57a9;
+}
 
 
 @media (max-width: 768px) {
@@ -250,5 +259,50 @@
         margin-bottom: 20px;
         /* Agrega espacio entre la imagen y el texto */
     }
+    
+    .footer-links {
+        flex-direction: column;
+        /* Coloca los elementos del footer en una columna */
+        align-items: center;
+        /* Centra los elementos horizontalmente */                     
+    }
 
-}
+    .footer-links p,
+    .footer-links a {
+        margin-bottom: 10px;
+    }
+    .menu-button {
+        display: flex;
+        /* Mostrar el botón de hamburguesa en versiones móviles */
+    }
+    .nav {
+        display: none;
+        /* Ocultar las opciones del menú en versiones móviles */
+        flex-direction: column;
+        align-items: center;
+           position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: #dee5f7;
+        padding-top: 20px;
+    }
+    .nav a {
+        margin: 10px 0;
+        width: 80%;
+        /* Ajustar el ancho de las opciones del menú en dispositivos móviles */
+        text-align: center;
+    }
+
+    .fc {
+    width: 100%;
+    }
+
+    .fc .fc-toolbar-title {
+         font-size: 1.25em;
+    }
+
+    .fc .fc-button-primary {
+         font-size: 10px;
+     }
+    }

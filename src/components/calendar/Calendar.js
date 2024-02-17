@@ -23,28 +23,30 @@ const MyCalendar = () => {
 
   return (
     <section id="proximos-eventos" className="main-section">
-      <h2 class="title" style={{ textAlign: 'center', margin:'20px' }}>Próximos eventos</h2>
-      <div className='calendar' style={{ width: '500px'}}> {/* Ajustamos el ancho y la altura del contenedor */}
-        <FullCalendar
-          events={events}
-          initialDate={currentDate}
-          headerToolbar={{
-            start: 'prev',
-            center: 'title',
-            end: 'next',
-          }}
-          plugins={[dayGridPlugin, interactionPlugin]}
-          views={{
-            dayGridMonth: {
-              titleFormat: { year: 'numeric', month: 'long' },
-              dayMaxEventRows: 2,
-            },
-          }}
-          locale={esLocale}
-          height= '500px'
-        />
-      </div>
-    </section>
+    <h2 class="title" style={{ textAlign: 'center', margin:'20px' }}>Próximos eventos</h2>
+    <div className='calendario-container'>
+        <div className='calendar'>
+            <FullCalendar
+                events={events}
+                initialDate={currentDate}
+                headerToolbar={{
+                    start: 'prev',
+                    center: 'title',
+                    end: 'next',
+                }}
+                plugins={[dayGridPlugin, interactionPlugin]}
+                views={{
+                    dayGridMonth: {
+                        titleFormat: { year: 'numeric', month: 'long' },
+                        dayMaxEventRows: 2,
+                    },
+                }}
+                locale={esLocale}
+            />
+        </div>
+    </div>
+</section>
+
   );
 };
 
