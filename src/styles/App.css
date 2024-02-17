@@ -16,43 +16,45 @@
 /*HEADER*/
 /*encabezado */
 .header {
-    background-image: url(../images/logo-belmonte.jpg);
-    background-color: #fcfcfc;
-        background-size: contain;
-        background-repeat: no-repeat;
-        position: sticky;
-        top: 0;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 100px;
-        padding: 20px;
-        color: #0a57a9;
-        margin-left: 30px;
+    background-color: #f9f1f1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100px;
+    padding: 10px 20px;
+    /* Reduzco el padding superior e inferior */
+    color: #0a57a9;
 }
 
-.title {
-    margin-left: 120px;
+.img-logo {
+    margin-right: 10px;
+    /* Ajusto el margen a la derecha del logo */
 }
 
-/*botón del menú */
+/* botón del menú */
 .menu-button {
     background: none;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        z-index: 2;
-        margin-left: auto;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    z-index: 2;
+    margin-left: 10px;
+    /* Ajusto el margen izquierdo del botón del menú */
+    /* ... restante de los estilos ... */
 }
 
 /*icono del menú */
 .menu-icon {
-    width: 40px;
-    height: 40px;
-    margin-right: 30px;
+    width: 30px;
+    /* Reduzco el tamaño del icono del menú */
+    height: 30px;
     position: relative;
     cursor: pointer;
 }
@@ -69,9 +71,11 @@
     align-items: center;
     position: absolute;
     top: 100%;
-    left: 0%;
-    width: 95%;
+    right: 0;
+    width: 100%;
+    /* Hago que el menú ocupe el 100% del ancho */
     background-color: #dee5f7;
+    /* ... restante de los estilos ... */
 }
 
 /*enlaces del menú desplegado */
@@ -126,6 +130,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: center;
 }
 
 /* imagen en Quiénes somos */
@@ -134,7 +139,12 @@
 }
 
 .texto-quienes-somos article p {
-    margin-bottom: 10px;
+    border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        padding: 20px;
+        margin-top: 20px;
+        font-size: 16px;
 }
 
 /*formulario */
@@ -177,11 +187,6 @@
     font-weight: bold;
 }
 
-/* Establece un ancho máximo para el contenedor del calendario */
-.calendar {
-    max-width: 100%;
-}
-
 /* Estilo para el título del calendario */
 .fc-toolbar-title {
     color: #0a57a9;
@@ -214,5 +219,36 @@
     text-align: center;
 }
 
+.footer-links {
+    display: flex;
+    /* Mostrar los elementos en línea */
+    justify-content: space-between;
+    /* Distribuir los elementos de manera uniforme */
+    padding: 10px;
+    /* Añadir espacio entre el contenido y el borde del footer */
+}
+
+.footer-links p,
+.footer-links a {
+    margin: 0;
+    /* Eliminar el margen de los párrafos y enlaces */
+}
 
 
+
+@media (max-width: 768px) {
+
+    /* Cambia el diseño de la sección "Quiénes somos" a columna */
+    #quienes-somos {
+        flex-direction: column;
+        align-items: center;
+        /* Centra los elementos en el eje X */
+    }
+
+    /* Ajusta los estilos para la imagen */
+    .imagen-quienes-somos {
+        margin-bottom: 20px;
+        /* Agrega espacio entre la imagen y el texto */
+    }
+
+}

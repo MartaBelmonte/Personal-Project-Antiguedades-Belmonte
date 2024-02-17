@@ -9,7 +9,7 @@ const WhoWeAre = () => {
             <img src={fotoXevi} alt="Foto Xevi" />
           </div>
           <div className="texto-quienes-somos">
-          <h2>Quiénes somos</h2>
+          <h2 style={{ textAlign: 'center', margin:'20px' }}>Quiénes somos</h2>
           <article className='quienes-somos'>
           <p>Mi nombre es Xavier, y mi historia se entrelaza con la encantadora ciudad de Manresa. Desde los albores de mi infancia, me sumergí en el fascinante mundo de las antigüedades. A lo largo de los años, he nutrido una colección de objetos tan singulares que algunos de ellos se han convertido en auténticos tesoros irremplazables, cargados de historias y nostalgia.</p> 
           <p>Esta pasión que me envuelve no solo es una afición, sino una auténtica vocación. La compra y venta de antigüedades se ha convertido en una parte integral de mi vida, una búsqueda incesante de piezas únicas y la emoción de descubrir su rica historia. Adentrarse en el universo de las antigüedades es como abrir un libro que revela el pasado de diferentes culturas y épocas.</p>

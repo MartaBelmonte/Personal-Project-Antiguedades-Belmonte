@@ -4,8 +4,8 @@ const Contact = () => {
 
     return (
         <section id="contacta" className="main-section">
+          <h2 style={{ textAlign: 'center', margin:'20px' }}>Contacta</h2>
           <form className="form">
-            <h2>Contacta</h2>
             <label>
               Tu nombre completo:
               <input type="text" name="nombre" />

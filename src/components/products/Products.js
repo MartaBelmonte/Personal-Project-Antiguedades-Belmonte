@@ -43,7 +43,7 @@ const MyProducts = () => {
 
   return (
     <section id="productos" className="main-section">
-      <h2>Productos</h2>
+      <h2 style={{ textAlign: 'center', margin:'20px' }}>Productos</h2>
       <div className='product-list'>
         {products.map((product) => (
           <p key={product.id} className="product-card">
